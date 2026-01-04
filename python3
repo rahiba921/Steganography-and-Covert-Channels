@@ -1,0 +1,14 @@
+from PIL import Image
+import numpy as np
+
+# Create a random test image
+width, height = 400, 300
+image_array = np.random.randint(0, 256, (height, width, 3), dtype=np.uint8)
+test_image = Image.fromarray(image_array, 'RGB')
+test_image.save('test_image.png')
+
+# Create a solid color image
+solid_image = Image.new('RGB', (400, 300), color='blue')
+solid_image.save('blue_image.png')
+
+print("Test images created successfully!")
